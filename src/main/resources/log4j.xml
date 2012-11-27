@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%5p - %d{dd-MMM-yyyy-HH:MM:ss}] ==> %m%n" />
+		</layout>
+	</appender>
+
+	<!-- application Logger -->
+	<logger name="org.pmg.cellar">
+        <level value="debug" />
+    </logger>
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.data">
+        <level value="debug" />
+    </logger>
+
+	<logger name="com.sun.jersey">
+        <level value="debug" />
+    </logger>
+
+	<logger name="com.sun.jersey.contribs">
+        <level value="debug" />
+    </logger>
+
+	<logger name="org.mongodb">
+        <level value="debug" />
+    </logger>
+
+	<logger name="org.aspectj">
+        <level value="debug" />
+    </logger>
+
+	<!-- Jasypt encryption -->
+    <logger name="org.jasypt.spring31.properties">
+        <level value="info" />
+    </logger>
+
+    <root>
+        <priority value="info" />
+        <appender-ref ref="console" />
+    </root>
+
+</log4j:configuration>
